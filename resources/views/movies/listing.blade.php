@@ -6,6 +6,10 @@
     <!-- will be used to show any messages -->
     @include('layouts.partials.messages')
 
+    <div class="row">
+        <h3>Movie Listings</h3>
+    </div>
+
     <div class="row text-right">
         <a href="/rentals/return" class="btn btn-info">Movie Return</a>
     </div>
