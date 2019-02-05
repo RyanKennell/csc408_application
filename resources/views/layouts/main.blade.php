@@ -36,6 +36,7 @@
 </head>
 <body>
 
+<h1>THIS IS NEW CONTENT</h1>
 <!-- Navigation and header -->
 @include('layouts.menu')
 
