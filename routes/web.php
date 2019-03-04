@@ -19,6 +19,11 @@ Auth::routes();
 
 Route::get('/', 'MovieController@listing')->name('listing');
 
+Route::get('/app', function(){
+   return view('vueapp.index');
+});
+
+
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/movies/rent', 'RentalController@rent');
     Route::resource('/movies', 'MovieController');

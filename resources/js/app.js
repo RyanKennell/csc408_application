@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.VueRouter = require('vue-router');
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,6 +29,23 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import PageMovies from './components/pages/Movies';
+import PageSuppliers from './components/pages/Suppliers';
+
+const router = new VueRouter({
+    routes: [
+        {
+            path: '/app/movies',
+            component: PageMovies
+        },
+        {
+            path: '/app/suppliers',
+            component: PageSuppliers
+        }
+    ]
+});
+
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router: router
 });
