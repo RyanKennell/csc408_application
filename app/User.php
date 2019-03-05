@@ -28,7 +28,8 @@ class User extends Authenticatable
     
     public function rentals()
     {
-        return $this->belongsToMany('App\Movie', 'rentals');
+        return $this->belongsToMany('App\Movie', 'rentals')
+            ->withPivot(['movie_id', 'user_id', 'rent_date', 'return_date', 'disc_type']);
     }
     
 }
