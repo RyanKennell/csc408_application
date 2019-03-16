@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 Route::group(['middleware' => 'cors'], function () {
     Route::get('/customers/{id}/rentals', 'ApiUserController@rentals');
     Route::resource('/customers', 'ApiUserController');
+    
+    Route::get('/movies/{id}/rentals', 'ApiMovieController@rentals');
+    Route::resource('/movies', 'ApiMovieController');
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

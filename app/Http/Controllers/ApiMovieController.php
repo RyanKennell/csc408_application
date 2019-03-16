@@ -1,10 +1,8 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-namespace App\Http\Controllers;
+use App\Movie;
 
-use App\User;
-
-class ApiUserController extends Controller
+class ApiMovieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +11,7 @@ class ApiUserController extends Controller
      */
     public function index()
     {
-        return User::get();
+        return Movie::get();
     }
     
     /**
@@ -23,7 +21,7 @@ class ApiUserController extends Controller
      */
     public function rentals($id)
     {
-        $rentals = User::where('id', $id)
+        $rentals = Movie::where('id', $id)
             ->with('rentals')
             ->get();
         
@@ -38,8 +36,6 @@ class ApiUserController extends Controller
      */
     public function show($id)
     {
-        return User::find($id);
+        return Movie::find($id);
     }
-
-   
 }
